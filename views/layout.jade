@@ -4,10 +4,11 @@ html(lang="en")
         meta(charset="utf-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="description", content="天天早餐后天")
-        meta(name="auhtor", content=Chaofan Wang")
+        meta(name="auhtor", content="Chaofan Wang")
         block title
             title 天天早餐后台管理系统
-        link(rel="stylesheet", href="/css/meitian.css")
+        link(rel="stylesheet", href="/css/style.css")
+        link(rel="stylesheet", href="/css/non-responsive.css")
         script(src="/js/vendor/require.min.js")
         script.
             requirejs.config({
@@ -26,3 +27,5 @@ html(lang="en")
     body
         block content
         block scriptSrc
+        script(src="/js/vendor/jquery-1.11.3.min.js")
+        script(src="/js/vendor/bootstrap.min.js")
