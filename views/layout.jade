@@ -1,0 +1,72 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+        meta(name="description", content="美天早餐")
+        meta(name="apple-touch-fullscreen", content="yes")
+        meta(http-equiv="Cache-Control", content="no-cache")
+        meta(name="full-screen", content="yes")
+        block title
+            title 美天早餐
+        link(rel="stylesheet", href="/css/meitian.css")
+        script(src="/js/vendor/require.min.js")
+        script.
+            requirejs.config({
+                baseUrl: '/js/vendor',
+                paths: {
+                    jquery: 'jquery-1.11.3.min',
+                    swiper: 'swiper.min'
+                },
+                shim: {
+                    swiper: {
+                        deps: ['jquery'],
+                        exports: 'Swiper'
+                    }
+                }
+            });
+    body
+        block content
+        block scriptSrc
+        script.
+            function resize(win) {
+                var doc = win.document,
+                        scale = 16,
+                        $body = doc.getElementsByTagName('body')[0],
+                        $html = doc.getElementsByTagName('html')[0],
+                        windowWidth = doc.documentElement && doc.documentElement.clientWidth || doc.body.clientWidth || win.innerWidth,
+                        windowHeight = doc.documentElement && doc.documentElement.clientHeight || doc.body.clientHeight || win.innerHeight,
+                        deviceAgent = navigator.userAgent.toLowerCase();
+                var setScale = function (scales) {
+                    $html.style.fontSize = scales + 'px';
+                    $html.style.display = 'block';
+                }
+                if (deviceAgent.match(/(iphone|ipod|android|windows\s*phone|symbianos)/)) {
+                    //获取safari获取localStorage的异常
+                    try {
+                        scale = parseFloat(windowWidth * 16 / 320);
+                        /*if (window.localStorage && window.localStorage.getItem('jumei_scale_touch')) {
+                         scale = window.localStorage.getItem('jumei_scale_touch');
+                         } else {
+                         if (windowHeight > windowWidth) {
+                         window.localStorage && window.localStorage.setItem('jumei_scale_touch', scale);
+                         }
+                         }*/
+                    } catch (e) {
+                    }
+                    if (deviceAgent.match(/android\s*2.3/) && deviceAgent.match(/micromessenger/)) {
+                        scale = 16;
+                    }
+                    setScale(scale);
+                } else {
+                    if (deviceAgent.match(/(ipad)/)) {
+                        scale = parseFloat(windowWidth * 16 / 320);
+                    } else {
+                        scale = 24;
+                    }
+                    setScale(scale);
+                }
+            }
+            window.onload = function () {
+                resize(window);
+            }
