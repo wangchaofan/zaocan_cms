@@ -1,0 +1,41 @@
+extends layout
+block title
+    title 首页
+block content
+    div.banner
+        .swiper-container()
+            ul.swiper-wrapper
+                each item in advs
+                    li.swiper-slide
+                        a(href=item.link_url): img(src=item.img_url, alt=item.name)
+        div.pagination
+    #position.container
+        #location.h2
+            .current-city(data-currentcity="北京市", data-city-id="1" data-is-need-alert="false")
+                | <i class="icon icon-location"></i> 当前城市: 北京市
+            .city-select
+                span.btn.btn-city-select 切换城市 <i class="icon icon-arrow-down"></i>
+                ul.city-list.clearfix
+                    each city in cities
+                        li.city-list-item
+                            a(href="", data-cityid=city.id)= city.name
+        .mt-searchbox
+            .mt-searchbox-wrap
+                .search-icon: img(src="/img/icon-search.png" alt="")
+                input.absolute-center(id="search-key" type="text" placeholder="搜索公司/写字楼")
+            .searchbox-list-container
+                .mt-searchbox-list
+    #districts
+        .h2 已开通早餐服务的地区
+        .district-list.clearfix
+            each item in districts
+                a.district-list-item(href="/company/?id="+item.id+"")= item.name
+    .show-more
+        span#expand-all
+            | 展开全部 <img class="arrow-down" src="/img/arrow-down-red.png" alt=""/>
+    p.not-find
+        a(href="") 没有找到自己的公司？点击开通
+    .body-shadow(style={top: '9.625rem', width: '20rem'})
+    include footer.jade
+block scriptSrc
+    script(src="/js/index.js")
