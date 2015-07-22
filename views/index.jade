@@ -2,4 +2,19 @@ extends layout
 block title
     title 首页
 block content
-    div 首页
+    nav.navbar.navbar-default.navbar-fixed-top
+        .container
+            .navbar-header
+                a.navbar-brand(href="#") Brand
+            #navbar
+                ul.nav.navbar-nav
+                    li.active
+                        a(href="/") 城市
+                    li
+                        a(href="#") 商圈
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href="/login") 登陆
+                    li
+                        a(href="/reg") 注册
+
