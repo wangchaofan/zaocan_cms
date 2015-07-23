@@ -1,0 +1,346 @@
+/* Template-specific stuff
+ *
+ * Customizations just for the template; these are not necessary for anything
+ * with disabling the responsiveness.
+ */
+/* line 7, ../sass/style.scss */
+body {
+  font-family: "Helvetica Neue";
+}
+
+/* line 11, ../sass/style.scss */
+body,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  min-width: 970px;
+}
+
+/* Don't let the lead text change font-size. */
+/* line 18, ../sass/style.scss */
+.lead {
+  font-size: 16px;
+}
+
+/* Finesse the page header spacing */
+/* line 23, ../sass/style.scss */
+.page-header {
+  margin-bottom: 30px;
+}
+
+/* line 26, ../sass/style.scss */
+.page-header .lead {
+  margin-bottom: 10px;
+}
+
+/* Non-responsive overrides
+ *
+ * Utilize the following CSS to disable the responsive-ness of the container,
+ * grid system, and navbar.
+ */
+/* Reset the container */
+/* line 38, ../sass/style.scss */
+.container {
+  width: 970px;
+  max-width: none !important;
+}
+
+/* Demonstrate the grids */
+/* line 44, ../sass/style.scss */
+.col-xs-4 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #eee;
+  background-color: rgba(86, 61, 124, 0.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86, 61, 124, 0.2);
+}
+
+/* line 53, ../sass/style.scss */
+.container .navbar-header,
+.container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* Always float the navbar header */
+/* line 60, ../sass/style.scss */
+.navbar-header {
+  float: left;
+}
+
+/* Undo the collapsing navbar */
+/* line 65, ../sass/style.scss */
+.navbar-collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+  visibility: visible !important;
+}
+
+/* line 73, ../sass/style.scss */
+.navbar-toggle {
+  display: none;
+}
+
+/* line 76, ../sass/style.scss */
+.navbar-collapse {
+  border-top: 0;
+}
+
+/* line 80, ../sass/style.scss */
+.navbar-brand {
+  margin-left: -15px;
+}
+
+/* Always apply the floated nav */
+/* line 85, ../sass/style.scss */
+.navbar-nav {
+  float: left;
+  margin: 0;
+}
+
+/* line 89, ../sass/style.scss */
+.navbar-nav > li {
+  float: left;
+}
+
+/* line 92, ../sass/style.scss */
+.navbar-nav > li > a {
+  padding: 15px;
+}
+
+/* Redeclare since we override the float above */
+/* line 97, ../sass/style.scss */
+.navbar-nav.navbar-right {
+  float: right;
+}
+
+/* Undo custom dropdowns */
+/* line 102, ../sass/style.scss */
+.navbar .navbar-nav .open .dropdown-menu {
+  position: absolute;
+  float: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-width: 0 1px 1px;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+/* line 113, ../sass/style.scss */
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #333;
+}
+
+/* line 116, ../sass/style.scss */
+.navbar .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > li > a:focus,
+.navbar .navbar-nav .open .dropdown-menu > .active > a,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #fff !important;
+  background-color: #428bca !important;
+}
+
+/* line 124, ../sass/style.scss */
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+  color: #999 !important;
+  background-color: transparent !important;
+}
+
+/* Undo form expansion */
+/* line 132, ../sass/style.scss */
+.navbar-form {
+  float: left;
+  width: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 0;
+  margin-left: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+/* Copy-pasted from forms.less since we mixin the .form-inline styles. */
+/* line 145, ../sass/style.scss */
+.navbar-form .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+/* line 151, ../sass/style.scss */
+.navbar-form .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+/* line 157, ../sass/style.scss */
+.navbar-form .form-control-static {
+  display: inline-block;
+}
+
+/* line 161, ../sass/style.scss */
+.navbar-form .input-group {
+  display: inline-table;
+  vertical-align: middle;
+}
+
+/* line 166, ../sass/style.scss */
+.navbar-form .input-group .input-group-addon,
+.navbar-form .input-group .input-group-btn,
+.navbar-form .input-group .form-control {
+  width: auto;
+}
+
+/* line 172, ../sass/style.scss */
+.navbar-form .input-group > .form-control {
+  width: 100%;
+}
+
+/* line 176, ../sass/style.scss */
+.navbar-form .control-label {
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+/* line 181, ../sass/style.scss */
+.navbar-form .radio,
+.navbar-form .checkbox {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+/* line 189, ../sass/style.scss */
+.navbar-form .radio label,
+.navbar-form .checkbox label {
+  padding-left: 0;
+}
+
+/* line 194, ../sass/style.scss */
+.navbar-form .radio input[type="radio"],
+.navbar-form .checkbox input[type="checkbox"] {
+  position: relative;
+  margin-left: 0;
+}
+
+/* line 200, ../sass/style.scss */
+.navbar-form .has-feedback .form-control-feedback {
+  top: 0;
+}
+
+/* Undo inline form compaction on small screens */
+/* line 205, ../sass/style.scss */
+.form-inline .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+/* line 211, ../sass/style.scss */
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+/* line 217, ../sass/style.scss */
+.form-inline .form-control-static {
+  display: inline-block;
+}
+
+/* line 221, ../sass/style.scss */
+.form-inline .input-group {
+  display: inline-table;
+  vertical-align: middle;
+}
+
+/* line 225, ../sass/style.scss */
+.form-inline .input-group .input-group-addon,
+.form-inline .input-group .input-group-btn,
+.form-inline .input-group .form-control {
+  width: auto;
+}
+
+/* line 231, ../sass/style.scss */
+.form-inline .input-group > .form-control {
+  width: 100%;
+}
+
+/* line 235, ../sass/style.scss */
+.form-inline .control-label {
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+/* line 240, ../sass/style.scss */
+.form-inline .radio,
+.form-inline .checkbox {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+/* line 247, ../sass/style.scss */
+.form-inline .radio label,
+.form-inline .checkbox label {
+  padding-left: 0;
+}
+
+/* line 252, ../sass/style.scss */
+.form-inline .radio input[type="radio"],
+.form-inline .checkbox input[type="checkbox"] {
+  position: relative;
+  margin-left: 0;
+}
+
+/* line 258, ../sass/style.scss */
+.form-inline .has-feedback .form-control-feedback {
+  top: 0;
+}
+
+/* my css. */
+/* line 263, ../sass/style.scss */
+.absolute-center {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+/* line 272, ../sass/style.scss */
+.login-container {
+  width: 302px;
+  height: 302px;
+  border-radius: 4px;
+  background-color: #fcfcfc;
+}
+/* line 277, ../sass/style.scss */
+.login-container .title {
+  height: 75px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 75px;
+  color: #ccc;
+  text-align: center;
+}
+/* line 284, ../sass/style.scss */
+.login-container .title img {
+  vertical-align: -1px;
+}
+
+/* line 289, ../sass/style.scss */
+body {
+  background-color: #f5f5f5;
+}
