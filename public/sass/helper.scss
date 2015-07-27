@@ -2,3 +2,7 @@ $mainColor: #1e92ce;
 $fs16: 16px;
 $fs14: 14px;
 $fs20: 20px;
+@mixin setBackgrount($url, $repeat: no-repeat, $size: cover) {
+  background: url($url) $repeat top center;
+  background-size: $size;
+}

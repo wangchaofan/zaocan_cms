@@ -260,6 +260,23 @@ body,
 }
 
 /* my css. */
+.icon {
+    margin: 0;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1;
+}
+.icon-user {
+    width: 16px;
+    height: 14px;
+    @include setBackgrount('/img/icon-user.png');
+}
+.icon-password {
+    width: 15px;
+    height: 16px;
+    @include setBackgrount('/img/icon-password.png');
+}
+/* login */
 .absolute-center {
   margin: auto;
   position: absolute;
@@ -272,7 +289,8 @@ body,
 .login-container {
 	width: 302px;
 	height: 302px;
-	border-radius: 4px;
+    border: 1px solid #ececec;
+	border-radius: 6px;
 	background-color: #fcfcfc;
 	.title {
 		height: 75px;
@@ -286,6 +304,55 @@ body,
 		}
 	}
 }
-body {
+.login-container {
+    .row {
+        margin: 0;
+        padding-left: 38px;
+
+        label {
+            display: inline-block;
+            width: 27px;
+        }
+    }
+    .row + .row {
+        margin-top: 20px
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        display: inline-block;
+        width: 200px;
+        height: 30px;
+        border: 1px solid #ececec;
+        outline: none;
+        background-color: #fff;
+    }
+    .checkbox {
+        margin-top: 8px;
+        padding-left: 64px;
+        label {
+            color: #ccc;
+        }
+    }
+}
+.fg-password {
+    margin-top: 22px;
+    font-size: 12px;
+    color: #ccc;
+    text-align: center;
+    a {
+        color: #ccc;
+    }
+}
+#login {
 	background-color: #f5f5f5;
+    #submit {
+        margin: 14px auto 0;
+        display: block;
+        width: 100px;
+        height: 30px;
+        padding: 0;
+        font-size: 14px;
+        color: #fff;
+    }
 }

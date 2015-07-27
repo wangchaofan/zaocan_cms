@@ -309,6 +309,31 @@ body,
 
 /* my css. */
 /* line 263, ../sass/style.scss */
+.icon {
+  margin: 0;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* line 269, ../sass/style.scss */
+.icon-user {
+  width: 16px;
+  height: 14px;
+  background: url("/img/icon-user.png") no-repeat top center;
+  background-size: cover;
+}
+
+/* line 274, ../sass/style.scss */
+.icon-password {
+  width: 15px;
+  height: 16px;
+  background: url("/img/icon-password.png") no-repeat top center;
+  background-size: cover;
+}
+
+/* login */
+/* line 280, ../sass/style.scss */
 .absolute-center {
   margin: auto;
   position: absolute;
@@ -319,14 +344,15 @@ body,
   overflow: auto;
 }
 
-/* line 272, ../sass/style.scss */
+/* line 289, ../sass/style.scss */
 .login-container {
   width: 302px;
   height: 302px;
-  border-radius: 4px;
+  border: 1px solid #ececec;
+  border-radius: 6px;
   background-color: #fcfcfc;
 }
-/* line 277, ../sass/style.scss */
+/* line 295, ../sass/style.scss */
 .login-container .title {
   height: 75px;
   font-size: 24px;
@@ -335,12 +361,68 @@ body,
   color: #ccc;
   text-align: center;
 }
-/* line 284, ../sass/style.scss */
+/* line 302, ../sass/style.scss */
 .login-container .title img {
   vertical-align: -1px;
 }
 
-/* line 289, ../sass/style.scss */
-body {
+/* line 308, ../sass/style.scss */
+.login-container .row {
+  margin: 0;
+  padding-left: 38px;
+}
+/* line 312, ../sass/style.scss */
+.login-container .row label {
+  display: inline-block;
+  width: 27px;
+}
+/* line 317, ../sass/style.scss */
+.login-container .row + .row {
+  margin-top: 20px;
+}
+/* line 321, ../sass/style.scss */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  display: inline-block;
+  width: 200px;
+  height: 30px;
+  border: 1px solid #ececec;
+  outline: none;
+  background-color: #fff;
+}
+/* line 330, ../sass/style.scss */
+.login-container .checkbox {
+  margin-top: 8px;
+  padding-left: 64px;
+}
+/* line 333, ../sass/style.scss */
+.login-container .checkbox label {
+  color: #ccc;
+}
+
+/* line 338, ../sass/style.scss */
+.fg-password {
+  margin-top: 22px;
+  font-size: 12px;
+  color: #ccc;
+  text-align: center;
+}
+/* line 343, ../sass/style.scss */
+.fg-password a {
+  color: #ccc;
+}
+
+/* line 347, ../sass/style.scss */
+#login {
   background-color: #f5f5f5;
+}
+/* line 349, ../sass/style.scss */
+#login #submit {
+  margin: 14px auto 0;
+  display: block;
+  width: 100px;
+  height: 30px;
+  padding: 0;
+  font-size: 14px;
+  color: #fff;
 }

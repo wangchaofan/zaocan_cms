@@ -1,13 +1,14 @@
 doctype html
-html(lang="en")
+html(lang="zh-CN")
     head
         meta(charset="utf-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="description", content="天天早餐后天")
-        meta(name="auhtor", content="Chaofan Wang")
+        meta(name="auhtor", content="Chaofan Wong")
         block title
             title 天天早餐后台管理系统
         link(rel="stylesheet", href="/css/bootstrap.css")
+        link(rel="stylesheet", href="css/bootstrap-theme.css")
         link(rel="stylesheet", href="/css/style.css")
         script(src="/js/vendor/require.min.js")
         script.
@@ -24,8 +25,8 @@ html(lang="en")
                     }
                 }
             });
-    body
+    body()
         block content
-        block scriptSrc
         script(src="/js/vendor/jquery-1.11.3.min.js")
         script(src="/js/vendor/bootstrap.min.js")
+        block scriptSrc
