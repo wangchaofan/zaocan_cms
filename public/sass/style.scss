@@ -258,7 +258,11 @@ body,
 .form-inline .has-feedback .form-control-feedback {
     top: 0;
 }
-
+.list-unstyled {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 /* my css. */
 .icon {
     margin: 0;
@@ -275,6 +279,39 @@ body,
     width: 15px;
     height: 16px;
     @include setBackgrount('/img/icon-password.png');
+}
+.sidebar {
+    float: left;
+    width: 280px;
+    background-color: #1E92CE;
+}
+.sidebar-header {
+    padding: 20px;
+    font-size: 30px;
+    font-family: "microsoft yahei";
+    font-weight: 700;
+    color: #fff;
+    background-color: #61B3DD;
+}
+.sidebar-menu {
+    a {
+        position: relative;
+        display: block;
+        font-size: 20px;
+        color: #fff;
+        padding: 20px 20px 20px 30px;
+        .fa {
+            font-size: 26px;
+            line-height: 1;
+            color: #53b4e6;
+        }
+    }
+    a:focus,
+    a:hover {
+        text-decoration: none;
+        background-color: #1b82b8;
+        transition: background-color .5s;
+    }
 }
 /* login */
 .absolute-center {
