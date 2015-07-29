@@ -1,9 +1,9 @@
 "use strict";
 var mongoose = require( 'mongoose' );
 // Build the connection string
-var dbURI = 'mongodb://localhost:27017/zaocan_cms';
+var dbURI = 'mongodb://localhost:27017/zaocan_cms, mongodb://localhost:27017/zaocan';
 // Create the database connection
-mongoose.connect(dbURI);
+mongoose.connect(dbURI, { mongos: true });
 
 mongoose.connection.on('connected', function () {
     console.log('Mongoose connected to ' + dbURI);

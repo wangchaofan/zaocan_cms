@@ -20,30 +20,16 @@ router.route('/')
 	.post(function (req, res, next) {
 		var newUser = initUser(req);
 
-		newUser.save(function (err) {
-			if(err) {
+		newUser.checkLogin(function (err, result) {
+			if(err)
 				throw err;
+			if(result) {
+				req.session.user = result;
+				res.redirect('/');
+			} else {
+				res.redirect('/login');
 			}
-			res.redirect('/login', { status:0, message: "用户名不存在"});
 		});
-		//newUser.findByUsername(function (err, result) {
-		//	if(err) {
-		//		throw err;
-		//	}
-		//	if(!result) {
-		//		newUser.save(function (err) {
-		//			if(err) {
-		//				throw err;
-		//			}
-		//			res.redirect('/login', { status:0, message: "用户名不存在"});
-		//		});
-		//	}  else if (result._doc.password !== newUser.password){
-		//		res.redirect('/login', { status:0, message: "密码错误"});
-		//	} else {
-		//		req.session.user = result[0];
-		//		res.redirect('/');
-		//	}
-		//});
 	});
 
 module.exports = router;

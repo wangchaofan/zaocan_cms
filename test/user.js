@@ -9,14 +9,14 @@ var crypto = require('crypto');
 
 var md5 = crypto.createHash('md5');
 var user = new User({
-    username: 'chan11',
+    username: 'admin',
     password: md5.update('123456').digest('base64')
 });
 
 user.save(function (err, re) {
     if(err)
         throw err;
-    cleanup();
+    //cleanup();
 });
 
 function cleanup() {

@@ -19,23 +19,12 @@ block content
                     label
                         input#remember(type="checkbox", name="remember") 
                         | Remember me 
-                button#submit.btn.btn-primary(type="button") 登 陆
+                button#submit.btn.btn-primary(type="submit") 登 陆
             p.fg-password 
                 a(href="") 忘记密码?
 block scriptSrc
     script.
         $('body').attr('id', 'login');
-        $('#submit').on('click', function () {
-            var username = $('#username').val(),
-                password = $('#passowrd').val();
-            var data = {
-                username: username,
-                password: password
-            }
-            $.post('/login', data, function (re) {
-                console.log(re);
-            }, 'json');
-        });
         $('input').on('keydown', function (e) {
             if(e.keyCode === 13) {
                 $('#submit').click();
