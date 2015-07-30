@@ -1,313 +1,9 @@
-/* Template-specific stuff
- *
- * Customizations just for the template; these are not necessary for anything
- * with disabling the responsiveness.
- */
-/* line 7, ../sass/style.scss */
+/* line 3, ../sass/style.scss */
 body {
-  font-family: "Helvetica Neue";
+  font-family: "STHeiti Light", "SimSun", "Helvetica Neue", sans-serif;
 }
 
-/* line 11, ../sass/style.scss */
-body,
-.navbar-fixed-top,
-.navbar-fixed-bottom {
-  min-width: 970px;
-}
-
-/* Don't let the lead text change font-size. */
-/* line 18, ../sass/style.scss */
-.lead {
-  font-size: 16px;
-}
-
-/* Finesse the page header spacing */
-/* line 23, ../sass/style.scss */
-.page-header {
-  margin-bottom: 30px;
-}
-
-/* line 26, ../sass/style.scss */
-.page-header .lead {
-  margin-bottom: 10px;
-}
-
-/* Non-responsive overrides
- *
- * Utilize the following CSS to disable the responsive-ness of the container,
- * grid system, and navbar.
- */
-/* Reset the container */
-/* line 38, ../sass/style.scss */
-.container {
-  width: 970px;
-  max-width: none !important;
-}
-
-/* Demonstrate the grids */
-/* line 44, ../sass/style.scss */
-.col-xs-4 {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background-color: #eee;
-  background-color: rgba(86, 61, 124, 0.15);
-  border: 1px solid #ddd;
-  border: 1px solid rgba(86, 61, 124, 0.2);
-}
-
-/* line 53, ../sass/style.scss */
-.container .navbar-header,
-.container .navbar-collapse {
-  margin-right: 0;
-  margin-left: 0;
-}
-
-/* Always float the navbar header */
-/* line 60, ../sass/style.scss */
-.navbar-header {
-  float: left;
-}
-
-/* Undo the collapsing navbar */
-/* line 65, ../sass/style.scss */
-.navbar-collapse {
-  display: block !important;
-  height: auto !important;
-  padding-bottom: 0;
-  overflow: visible !important;
-  visibility: visible !important;
-}
-
-/* line 73, ../sass/style.scss */
-.navbar-toggle {
-  display: none;
-}
-
-/* line 76, ../sass/style.scss */
-.navbar-collapse {
-  border-top: 0;
-}
-
-/* line 80, ../sass/style.scss */
-.navbar-brand {
-  margin-left: -15px;
-}
-
-/* Always apply the floated nav */
-/* line 85, ../sass/style.scss */
-.navbar-nav {
-  float: left;
-  margin: 0;
-}
-
-/* line 89, ../sass/style.scss */
-.navbar-nav > li {
-  float: left;
-}
-
-/* line 92, ../sass/style.scss */
-.navbar-nav > li > a {
-  padding: 15px;
-}
-
-/* Redeclare since we override the float above */
-/* line 97, ../sass/style.scss */
-.navbar-nav.navbar-right {
-  float: right;
-}
-
-/* Undo custom dropdowns */
-/* line 102, ../sass/style.scss */
-.navbar .navbar-nav .open .dropdown-menu {
-  position: absolute;
-  float: left;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-width: 0 1px 1px;
-  border-radius: 0 0 4px 4px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-}
-
-/* line 113, ../sass/style.scss */
-.navbar-default .navbar-nav .open .dropdown-menu > li > a {
-  color: #333;
-}
-
-/* line 116, ../sass/style.scss */
-.navbar .navbar-nav .open .dropdown-menu > li > a:hover,
-.navbar .navbar-nav .open .dropdown-menu > li > a:focus,
-.navbar .navbar-nav .open .dropdown-menu > .active > a,
-.navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
-.navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
-  color: #fff !important;
-  background-color: #428bca !important;
-}
-
-/* line 124, ../sass/style.scss */
-.navbar .navbar-nav .open .dropdown-menu > .disabled > a,
-.navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
-.navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-  color: #999 !important;
-  background-color: transparent !important;
-}
-
-/* Undo form expansion */
-/* line 132, ../sass/style.scss */
-.navbar-form {
-  float: left;
-  width: auto;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-right: 0;
-  margin-left: 0;
-  border: 0;
-  box-shadow: none;
-}
-
-/* Copy-pasted from forms.less since we mixin the .form-inline styles. */
-/* line 145, ../sass/style.scss */
-.navbar-form .form-group {
-  display: inline-block;
-  margin-bottom: 0;
-  vertical-align: middle;
-}
-
-/* line 151, ../sass/style.scss */
-.navbar-form .form-control {
-  display: inline-block;
-  width: auto;
-  vertical-align: middle;
-}
-
-/* line 157, ../sass/style.scss */
-.navbar-form .form-control-static {
-  display: inline-block;
-}
-
-/* line 161, ../sass/style.scss */
-.navbar-form .input-group {
-  display: inline-table;
-  vertical-align: middle;
-}
-
-/* line 166, ../sass/style.scss */
-.navbar-form .input-group .input-group-addon,
-.navbar-form .input-group .input-group-btn,
-.navbar-form .input-group .form-control {
-  width: auto;
-}
-
-/* line 172, ../sass/style.scss */
-.navbar-form .input-group > .form-control {
-  width: 100%;
-}
-
-/* line 176, ../sass/style.scss */
-.navbar-form .control-label {
-  margin-bottom: 0;
-  vertical-align: middle;
-}
-
-/* line 181, ../sass/style.scss */
-.navbar-form .radio,
-.navbar-form .checkbox {
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 0;
-  vertical-align: middle;
-}
-
-/* line 189, ../sass/style.scss */
-.navbar-form .radio label,
-.navbar-form .checkbox label {
-  padding-left: 0;
-}
-
-/* line 194, ../sass/style.scss */
-.navbar-form .radio input[type="radio"],
-.navbar-form .checkbox input[type="checkbox"] {
-  position: relative;
-  margin-left: 0;
-}
-
-/* line 200, ../sass/style.scss */
-.navbar-form .has-feedback .form-control-feedback {
-  top: 0;
-}
-
-/* Undo inline form compaction on small screens */
-/* line 205, ../sass/style.scss */
-.form-inline .form-group {
-  display: inline-block;
-  margin-bottom: 0;
-  vertical-align: middle;
-}
-
-/* line 211, ../sass/style.scss */
-.form-inline .form-control {
-  display: inline-block;
-  width: auto;
-  vertical-align: middle;
-}
-
-/* line 217, ../sass/style.scss */
-.form-inline .form-control-static {
-  display: inline-block;
-}
-
-/* line 221, ../sass/style.scss */
-.form-inline .input-group {
-  display: inline-table;
-  vertical-align: middle;
-}
-
-/* line 225, ../sass/style.scss */
-.form-inline .input-group .input-group-addon,
-.form-inline .input-group .input-group-btn,
-.form-inline .input-group .form-control {
-  width: auto;
-}
-
-/* line 231, ../sass/style.scss */
-.form-inline .input-group > .form-control {
-  width: 100%;
-}
-
-/* line 235, ../sass/style.scss */
-.form-inline .control-label {
-  margin-bottom: 0;
-  vertical-align: middle;
-}
-
-/* line 240, ../sass/style.scss */
-.form-inline .radio,
-.form-inline .checkbox {
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 0;
-  vertical-align: middle;
-}
-
-/* line 247, ../sass/style.scss */
-.form-inline .radio label,
-.form-inline .checkbox label {
-  padding-left: 0;
-}
-
-/* line 252, ../sass/style.scss */
-.form-inline .radio input[type="radio"],
-.form-inline .checkbox input[type="checkbox"] {
-  position: relative;
-  margin-left: 0;
-}
-
-/* line 258, ../sass/style.scss */
-.form-inline .has-feedback .form-control-feedback {
-  top: 0;
-}
-
-/* line 261, ../sass/style.scss */
+/* line 7, ../sass/style.scss */
 .list-unstyled {
   margin: 0;
   padding: 0;
@@ -315,7 +11,7 @@ body,
 }
 
 /* my css. */
-/* line 267, ../sass/style.scss */
+/* line 13, ../sass/style.scss */
 .icon {
   margin: 0;
   vertical-align: middle;
@@ -323,7 +19,7 @@ body,
   line-height: 1;
 }
 
-/* line 273, ../sass/style.scss */
+/* line 19, ../sass/style.scss */
 .icon-user {
   width: 16px;
   height: 14px;
@@ -331,7 +27,7 @@ body,
   background-size: cover;
 }
 
-/* line 278, ../sass/style.scss */
+/* line 24, ../sass/style.scss */
 .icon-password {
   width: 15px;
   height: 16px;
@@ -339,24 +35,24 @@ body,
   background-size: cover;
 }
 
-/* line 283, ../sass/style.scss */
+/* line 29, ../sass/style.scss */
 .sidebar {
   float: left;
-  width: 280px;
+  padding: 0 0 1.5rem;
   background-color: #1E92CE;
 }
 
-/* line 288, ../sass/style.scss */
+/* line 34, ../sass/style.scss */
 .sidebar-header {
-  padding: 20px;
-  font-size: 30px;
+  padding: 20px 20px 10px;
+  font-size: 32px;
   font-family: "microsoft yahei";
   font-weight: 700;
   color: #fff;
   background-color: #61B3DD;
 }
 
-/* line 297, ../sass/style.scss */
+/* line 43, ../sass/style.scss */
 .sidebar-menu a {
   position: relative;
   display: block;
@@ -364,13 +60,13 @@ body,
   color: #fff;
   padding: 20px 20px 20px 30px;
 }
-/* line 303, ../sass/style.scss */
+/* line 49, ../sass/style.scss */
 .sidebar-menu a .fa {
   font-size: 26px;
   line-height: 1;
   color: #53b4e6;
 }
-/* line 309, ../sass/style.scss */
+/* line 55, ../sass/style.scss */
 .sidebar-menu a:focus,
 .sidebar-menu a:hover {
   text-decoration: none;
@@ -380,7 +76,7 @@ body,
 }
 
 /* login */
-/* line 317, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 .absolute-center {
   margin: auto;
   position: absolute;
@@ -391,7 +87,7 @@ body,
   overflow: auto;
 }
 
-/* line 326, ../sass/style.scss */
+/* line 72, ../sass/style.scss */
 .login-container {
   width: 302px;
   height: 302px;
@@ -399,7 +95,7 @@ body,
   border-radius: 6px;
   background-color: #fcfcfc;
 }
-/* line 332, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 .login-container .title {
   height: 75px;
   font-size: 24px;
@@ -408,26 +104,26 @@ body,
   color: #ccc;
   text-align: center;
 }
-/* line 339, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 .login-container .title img {
   vertical-align: -1px;
 }
 
-/* line 345, ../sass/style.scss */
+/* line 91, ../sass/style.scss */
 .login-container .row {
   margin: 0;
   padding-left: 38px;
 }
-/* line 349, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 .login-container .row label {
   display: inline-block;
   width: 27px;
 }
-/* line 354, ../sass/style.scss */
+/* line 100, ../sass/style.scss */
 .login-container .row + .row {
   margin-top: 20px;
 }
-/* line 358, ../sass/style.scss */
+/* line 104, ../sass/style.scss */
 .login-container input[type="text"],
 .login-container input[type="password"] {
   display: inline-block;
@@ -437,33 +133,33 @@ body,
   outline: none;
   background-color: #fff;
 }
-/* line 367, ../sass/style.scss */
+/* line 113, ../sass/style.scss */
 .login-container .checkbox {
   margin-top: 8px;
   padding-left: 64px;
 }
-/* line 370, ../sass/style.scss */
+/* line 116, ../sass/style.scss */
 .login-container .checkbox label {
   color: #ccc;
 }
 
-/* line 375, ../sass/style.scss */
+/* line 121, ../sass/style.scss */
 .fg-password {
   margin-top: 22px;
   font-size: 12px;
   color: #ccc;
   text-align: center;
 }
-/* line 380, ../sass/style.scss */
+/* line 126, ../sass/style.scss */
 .fg-password a {
   color: #ccc;
 }
 
-/* line 384, ../sass/style.scss */
+/* line 130, ../sass/style.scss */
 #login {
   background-color: #f5f5f5;
 }
-/* line 386, ../sass/style.scss */
+/* line 132, ../sass/style.scss */
 #login #submit {
   margin: 14px auto 0;
   display: block;

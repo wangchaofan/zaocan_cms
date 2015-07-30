@@ -2,7 +2,7 @@ extends layout
 block title
     title 登陆
 block content
-    .wrapper
+    .container-fluid
         .login-container.absolute-center
             .title
                 |    <img src="/img/icon-login.png" alt=""> Login
@@ -17,10 +17,10 @@ block content
                     input#passowrd.form-control(type="password", name="password")
                 div.checkbox
                     label
-                        input#remember(type="checkbox", name="remember") 
-                        | Remember me 
+                        input#remember(type="checkbox", name="remember")
+                        | Remember me
                 button#submit.btn.btn-primary(type="submit") 登 陆
-            p.fg-password 
+            p.fg-password
                 a(href="") 忘记密码?
 block scriptSrc
     script.

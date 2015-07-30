@@ -2,6 +2,8 @@ extends layout
 block title
     title 首页
 block content
-    .wrapper
-        include sidebar.jade
-        main#content.content
+    .container-fluid
+        .row
+            include sidebar.jade
+            main#content.content.col-md-10
+
