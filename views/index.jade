@@ -2,8 +2,79 @@ extends layout
 block title
     title 首页
 block content
-    .container-fluid
-        .row
-            include sidebar.jade
-            main#content.content.col-md-10
+    .wrap.bg-dark
+        include top.jade
+        include sidebar.jade
+        #content.content
+            .content-head
+                h3
+                    i.fa.fa-pencil
+                    | 城市管理
+            .outer
+                .inner.bg-light.lter
+                    .row
+                        .col-md-12
+                            .box
+                                header
+                                    h5 城市列表
+                                .body
+                                    .dataTables_wrapper.form-inline.dt-bootstrap.no-footer
+                                        .row
+                                            .col-sm-6.dataTable_length
+                                                label 显示&nbsp;
+                                                    select.form-control.input-sm(name="dataTable_length", aria-controls="dataTable")
+                                                        option(value="10", selected) 10
+                                                        option(value="20") 20
+                                                        option(value="50") 50
+                                                        option(value="100") 100
+                                                    |   条数据
+                                            .col-sm-6.dataTables_filter
+                                                label 搜索：
+                                                    input.form-control.input-sm(type="search", placeholder="输入关键字")
 
+                                        .row
+                                            .col-md-12
+                                                table.table.table-responsive.table-condensed.table-bordered.dataTable.sortableTable
+                                                    thead
+                                                        tr
+                                                            th.tablesorter-header
+                                                                .tablesorter-header-inner #
+                                                                    i.fa.fa-sort
+                                                            th.tablesorter-header
+                                                                .tablesorter-header-inner 城市名称
+                                                                    i.fa.fa-sort
+                                                            th.tablesorter-header
+                                                                .tablesorter-header-inner 城市代码
+                                                                    i.fa.fa-sort
+                                                            th.tablesorter-header
+                                                                .tablesorter-header-inner 操作
+                                                                    i.fa.fa-sort
+                                                    tbody
+                                                        tr
+                                                            td(scope="row") 1
+                                                            td 北京
+                                                            td 103
+                                                            td
+                                                                button.btn.btn-primary 新增
+                                                        tr
+                                                            td(scope="row") 1
+                                                            td 成都
+                                                            td 53
+                                                            td
+                                                                button.btn.btn-primary 新增
+                                        .row
+                                            .col-sm-6
+                                                .dataTables_info 显示 1 到 10 条数据， 共 50 条数据
+                                            .col-sm-6
+                                                .dataTables_paginate.paging_simple_numbers
+                                                    ul.pagination
+                                                        li.paginate_button.previous
+                                                            a(href="#") 上一页
+                                                        li.paginate_button.active
+                                                            a(href="#") 1
+                                                        li.paginate_button
+                                                            a(href="#") 2
+                                                        li.paginate_button
+                                                            a(href="#") 3
+                                                        li.paginate_button.next
+                                                            a(href="#") 下一页
