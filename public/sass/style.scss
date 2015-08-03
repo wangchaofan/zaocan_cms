@@ -1,6 +1,10 @@
 @import "helper";
-
+html {
+    height: 100%;
+}
 body {
+    margin-bottom: 0;
+    height: 100%;
 	font-family: "STHeiti Light", "SimSun", "Helvetica Neue", sans-serif;
 }
 
@@ -59,15 +63,32 @@ body {
         transition: background-color .5s;
     }
 }
-#top .navbar-brand {
-    padding: 15px;
+#top  {
+    margin-bottom: 0;
+    z-index: 2;
+    .navbar-brand {
+        padding: 15px;
+    }
 }
 #menu {
     background-color: #333333 !important;
 }
-.wrap {
+#content {
     position: relative;
-    padding-top: 52px;
+    height: 100%;
+    padding-top: 50px;
+    z-index: 1;
+}
+#left {
+    padding-top: 50px;
+    background-color: rgba(0,0,0,0.2);
+    height: 100%;
+    z-index: 1;
+}
+.wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 .content {
     .content-head {
