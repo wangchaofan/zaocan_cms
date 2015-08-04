@@ -11,8 +11,8 @@ var settings = require('./setting');
 var db = require('./models/db');
 
 
-var routes = require('./routes/index');
-var login = require('./routes/login');
+var routes = require('./routes/index'),
+    city = require('./routes/cities');
 
 var app = express();
 var router = express.Router();
@@ -51,7 +51,7 @@ var accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a
 router.use(logger('combined', {stream: accessLogStream}));
 
 app.use('/', routes);
-app.use('/login', login);
+app.use('/city', city);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

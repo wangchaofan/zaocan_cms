@@ -1,19 +1,33 @@
 "use strict";
 var mongoose = require( 'mongoose' );
+var async = require('async');
 // Build the connection string
-var dbURI = 'mongodb://localhost:27017/zaocan_cms, mongodb://localhost:27017/zaocan';
+var zaocan_uri = 'mongodb://localhost:27017/zaocan';
+var zaocan_cms_uri = 'mongodb://localhost:27017/zaocan_cms';
 // Create the database connection
-mongoose.connect(dbURI, { mongos: true });
+global.zaoCanDb = mongoose.createConnection(zaocan_uri);
+global.zaoCanCmsDb = mongoose.createConnection(zaocan_cms_uri);
 
-mongoose.connection.on('connected', function () {
-    console.log('Mongoose connected to ' + dbURI);
+var dbArr = [zaoCanDb, zaoCanCmsDb];
+
+async.each(dbArr, function (item, callback) {
+    item.on('connected', function () {
+        console.log('Mongoose connected to ' + 'mongodb://'+ this.host + ":" + this.port + "/" + this.name);
+    });
+    item.on('error',function (err) {
+        console.log('Mongoose connection error: ' + err);
+    });
+    item.on('disconnected', function () {
+        console.log(this.name + ' disconnected');
+    });
+}, function (err) {
+    if(err) {
+        console.log('error');
+    } else {
+        console.log('success');
+    }
 });
-mongoose.connection.on('error',function (err) {
-    console.log('Mongoose connection error: ' + err);
-});
-mongoose.connection.on('disconnected', function () {
-    console.log('Mongoose disconnected');
-});
+
 process.on('SIGINT', function() {
     mongoose.connection.close(function () {
         console.log('Mongoose disconnected through app termination');

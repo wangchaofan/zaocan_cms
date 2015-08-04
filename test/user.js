@@ -16,7 +16,7 @@ var user = new User({
 user.save(function (err, re) {
     if(err)
         throw err;
-    //cleanup();
+    cleanup();
 });
 
 function cleanup() {

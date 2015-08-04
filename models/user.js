@@ -19,5 +19,5 @@ userSchema.statics.findByUsername = function(username,cb){
     this.findOne({username: username},cb);
 };
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = global.zaoCanCmsDb.model('User', userSchema);
 
