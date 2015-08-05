@@ -7,27 +7,17 @@ html(lang="zh-CN")
         meta(name="auhtor", content="Chaofan Wong")
         block title
             title 天天早餐后台管理系统
-        link(rel="stylesheet", href="/css/bootstrap.css")
-        link(rel="stylesheet", href="/css/font-awesome.min.css")
+        link(rel="stylesheet", href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css")
+        link(rel="stylesheet", href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
         link(rel="stylesheet", href="/css/metis.css")
+        link(rel="stylesheet", href="/css/font-awesome.min.css")
+        link(rel="stylesheet", href="/css/ui.jqgrid-bootstrap.css")
+
         link(rel="stylesheet", href="/css/style.css")
-        script(src="/js/vendor/require.min.js")
-        script.
-            requirejs.config({
-                baseUrl: '/js/vendor',
-                paths: {
-                    jquery: 'jquery-1.11.3.min',
-                    swiper: 'swiper.min'
-                },
-                shim: {
-                    swiper: {
-                        deps: ['jquery'],
-                        exports: 'Swiper'
-                    }
-                }
-            });
     body
         block content
         script(src="/js/vendor/jquery-1.11.3.min.js")
-        script(src="/js/vendor/bootstrap.min.js")
+        script(src="/js/vendor/i18n/grid.locale-cn.js")
+        script(src="/js/vendor/jquery.jqGrid.min.js")
+        script(src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js")
         block scriptSrc

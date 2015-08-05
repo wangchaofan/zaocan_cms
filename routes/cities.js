@@ -4,16 +4,20 @@
 var express = require('express');
 var router = express.Router();
 var async = require('async');
-var City = require('../models/city');
+var City = require('../models/city-model');
+var app = express();
 
 /* GET users listing. */
-router.route('/')
-    .get(function(req, res, next) {
-        City.find({}, function (err, data) {
-            if(err)
-                throw err;
-            res.render('city', { cities: data });
-        });
+router.get('/', function (req, res) {
+    res.render('city');
+});
+router.get('/lists', function(req, res){
+    City.query(req.query, function (err, data) {
+       if(err){
+           res.send({error: err});
+       } else {
+           res.send(data);
+       }
     });
-
+});
 module.exports = router;
