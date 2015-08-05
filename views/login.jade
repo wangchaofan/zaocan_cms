@@ -1,0 +1,33 @@
+extends layout
+block title
+    title 登陆
+block content
+    .container-fluid
+        .login-container.absolute-center
+            .title
+                |    <img src="/img/icon-login.png" alt=""> Login
+            form#loginForm.form-horizontal(action="/login", method="POST")
+                .row
+                    label(for="username")
+                        i.icon.icon-user
+                    input#username.form-control(type="text", name="username")
+                .row
+                    label(for="password")
+                        i.icon.icon-password
+                    input#passowrd.form-control(type="password", name="password")
+                div.checkbox
+                    label
+                        input#remember(type="checkbox", name="remember")
+                        | Remember me
+                button#submit.btn.btn-primary(type="submit") 登 陆
+            p.fg-password
+                a(href="") 忘记密码?
+block scriptSrc
+    script.
+        $('body').attr('id', 'login');
+        $('input').on('keydown', function (e) {
+            if(e.keyCode === 13) {
+                $('#submit').click();
+            }
+        });
+

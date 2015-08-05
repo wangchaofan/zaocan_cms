@@ -1,0 +1,26 @@
+extends layout
+block title
+    title 城市管理
+block content
+    .wrap.bg-dark
+        include top.jade
+        include sidebar.jade
+        #content.content
+            .content-head
+                h3
+                    i.fa.fa-pencil
+                    | 城市管理
+            .outer
+                .inner.bg-light.lter
+                    .row
+                        .col-md-12
+                            .box
+                                header
+                                    h5 城市列表
+                                .body
+                                    .row
+                                        .col-md-12
+                                            table#cityList
+                                            #pager
+block scriptSrc
+    script(src="/js/city.js")

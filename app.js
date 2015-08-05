@@ -6,14 +6,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+var fs = require('fs');
 var settings = require('./setting');
 var db = require('./models/db');
 
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var routes = require('./routes/index'),
+    city = require('./routes/cities');
 
 var app = express();
+var router = express.Router();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -44,8 +46,12 @@ app.use(function (req, res, next) {
     next();
 });
 
+// logger
+var accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'});
+router.use(logger('combined', {stream: accessLogStream}));
+
 app.use('/', routes);
-app.use('/users', users);
+app.use('/city', city);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
