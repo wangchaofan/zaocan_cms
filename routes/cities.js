@@ -6,6 +6,7 @@ var router = express.Router();
 var async = require('async');
 var City = require('../models/city-model');
 var app = express();
+var zcms = require('../models/ZCMS');
 
 /* GET users listing. */
 router.get('/', function (req, res) {
@@ -19,5 +20,20 @@ router.get('/lists', function(req, res){
            res.send(data);
        }
     });
+});
+router.post('/', function (req, res) {
+    var oper = req.body['oper'],
+        postData = req.body;
+    delete postData.oper;
+    if(oper === 'del') {
+
+    } else if (oper === 'add') {
+        var newCity = new City(postData);
+        newCity.save(function (err, data) {
+           res.send(zcms.initError(err));
+        });
+    } else {
+
+    }
 });
 module.exports = router;

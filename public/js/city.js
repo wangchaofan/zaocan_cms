@@ -1,6 +1,7 @@
 'use strict';
 
 $.jgrid.defaults.width = 780;
+$.jgrid.defaults.height = 400;
 $.jgrid.defaults.responsive = true;
 $.jgrid.defaults.styleUI = 'Bootstrap';
 $(function () {
@@ -10,49 +11,62 @@ $(function () {
         mtype: "GET",
         styleUI: 'Bootstrap',
         colModel: [
-            { name: "id", hidden: true, key: true },
+            { name: "_id", hidden: true, key: true },
             { name: "code", index: "code", label: '城市代码', editable: true },
             { name: "name", index: "name", label: '城市名称', editable: true },
             { name: "__v", hidden: true }
         ],
+        loadonce: true,
         rowNum: 10,
         rowList: [10, 20, 30],
+        multiselect: false,
+        rownumbers: true,
         pager: "#pager",
         sortname: "code",
         sortorder: "asc",
         viewrecords: true,
-        gridview: true
+        gridview: true,
+        editurl: '/city/',
+        jsonReader: {
+            id: "_id"
+        }
     });
-    var template = "<div style='margin-left:15px;'><div> Customer ID <sup>*</sup>:</div><div> {CustomerID} </div>";
-        template += "<div> Company Name: </div><div>{CompanyName} </div>";
-        template += "<div> Phone: </div><div>{Phone} </div>";
-        template += "<div> Postal Code: </div><div>{PostalCode} </div>";
-        template += "<div> City:</div><div> {City} </div>";
-        template += "<hr style='width:100%;'/>";
-        template += "<div> {sData} {cData}  </div></div>";
     $('#cityList').navGrid('#pager',
-        { edit: true, add: true, del: true, search: true, refresh: false, view: false, position: "left", cloneToTop: false },
-        // options for the Edit Dialog
         {
-            editCaption: "修改记录",
-            recreateForm: true,
+            add: true,
+            edit: true,
+            del: true,
+            search: true,
+            view: false,
+            refresh:false
+        },
+        {
+            closeOnEscape:true,
             closeAfterEdit: true,
-            errorTextFormat: function (data) {
-                return 'Error: ' + data.responseText
-            }
-        },
-        // options for the Add Dialog
-        {
-            closeAfterAdd: true,
             recreateForm: true,
             errorTextFormat: function (data) {
+                console.log(data);
                 return 'Error: ' + data.responseText
             }
         },
-        // options for the Delete Dailog
         {
+            closeOnEscape:true,
+            closeAfterAdd: true,
             errorTextFormat: function (data) {
+                console.log(data);
                 return 'Error: ' + data.responseText
             }
-    });
+        },
+        {
+            closeOnEscape:true,
+            errorTextFormat: function (data) {
+                console.log(data);
+                return 'Error: ' + data.responseText
+            }
+        },
+        {
+            closeOnEscape:true,
+            odata : ['equal', 'not equal', 'less', 'less or equal','greater','greater or equal', 'begins with','does not begin with','is in','is not in','ends with','does not end with']
+        }
+    );
 });

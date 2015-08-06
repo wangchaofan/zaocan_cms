@@ -23,7 +23,10 @@ citySchema.statics.query = function (queryParam, callback) {
                 rows = queryParam.rows,
                 page = queryParam.page,
                 sidx = queryParam.sidx,
-                sord = queryParam.sord;
+                sord = queryParam.sord,
+                searchField = queryParam.searchField,
+                searchString = queryParam.searchString,
+                searchOper = queryParam.searchOper;
 
             var query = _this.find({}).skip((page - 1)*rows).limit(rows);
 
