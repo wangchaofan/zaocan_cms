@@ -1,0 +1,12 @@
+.modal.fade(role="dialog", id="addEditModal", tabindex="-1", aria-labelledby="editLabel")
+   .modal-dialog
+      .modal-content
+         .modal-header
+            button.close(type="button", data-dismiss="modal", aria-label="Close")
+               span(aria-hidden="true") &times;
+            h4.modal-title 新增
+         .modal-body
+            p.bg-danger(role="errorwarn")
+         .modal-footer
+            button.btn.btn-primary(type="button", id="submit", submit-type="add") 提交
+            button.btn.btn-default(type="button", data-dismiss="modal") 关闭

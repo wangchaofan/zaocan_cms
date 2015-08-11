@@ -4,7 +4,7 @@
 var express = require('express');
 var router = express.Router();
 var async = require('async');
-var City = require('../models/city-model');
+var cityModel = require('../models/cityModel');
 var app = express();
 var zcms = require('../models/ZCMS');
 
@@ -13,7 +13,7 @@ router.get('/', function (req, res) {
     res.render('city');
 });
 router.get('/lists', function(req, res){
-    City.query(req.query, function (err, data) {
+    cityModel.query(req.query, function (err, data) {
        if(err){
            res.send({error: err});
        } else {
@@ -22,18 +22,23 @@ router.get('/lists', function(req, res){
     });
 });
 router.post('/', function (req, res) {
-    var oper = req.body['oper'],
-        postData = req.body;
-    delete postData.oper;
-    if(oper === 'del') {
-
-    } else if (oper === 'add') {
-        var newCity = new City(postData);
-        newCity.save(function (err, data) {
-           res.send(zcms.initError(err));
-        });
-    } else {
-
-    }
+    var postData = req.body;
+    delete postData._id;
+    delete postData.__v;
+    var newCity = new cityModel(postData);
+    newCity.save(function (err) {
+       res.send(zcms.initError(err));
+    });
+});
+router.put('/', function (req, res) {
+    var postData = req.body;
+    cityModel.findByIdAndUpdate(postData._id, postData, function (err, re) {
+        res.send(zcms.initError(err));
+    });
+});
+router.delete('/', function (req, res) {
+   cityModel.findByIdAndRemove(req.body['_id'], function (err, re) {
+       res.send(zcms.initError(err));
+   });
 });
 module.exports = router;

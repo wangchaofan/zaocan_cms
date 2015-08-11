@@ -1,9 +1,16 @@
 var ZCMS = {
     initError: function (err) {
+        var errMessage = '';
+        if(err) {
+            for(var errName in err.errors) {
+                errMessage = err.errors[errName].message
+                break;
+            }
+        }
         return {
-            error: err || null,
-            status: !!err ? 0 : 1,
-            responseText: !!err ? err.message : "success"
+            errors: err,
+            status: !!errMessage ? 0 : 1,
+            responseText: !!errMessage ? errMessage : "success"
         }
     }
 };

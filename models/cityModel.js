@@ -1,13 +1,45 @@
 "use strict";
 var mongoose = require('mongoose');
+var validate = require('mongoose-validator');
+var extend = validate.extend;
 var async = require('async');
+
+var ValidationError = mongoose.Error.ValidationError;
+var ValidatorError  = mongoose.Error.ValidatorError;
 
 var Schema = mongoose.Schema,
     ObjectId = Schema.Object;
 
+extend('notEmpty', function (val) {
+    return !!val;
+});
+
 var citySchema = new Schema({
-    code: { type: String, required: true, index: { unique: true } },
-    name: String
+    code: { type: String,  index: { unique: true }, validate: [validate({ message: '代码不能为空', validator: 'notEmpty'})] },
+    name: { type: String, validate: [validate({ message: '名称不能为空', validator: 'notEmpty'})] }
+});
+
+citySchema.pre('save', function (next) {
+    var _this = this;
+    /*检查代码是否重复*/
+    global.zaoCanDb.model('City').findOne({ code: this.code }, function (err, re) {
+       if(err) {
+           next(err);
+       } else {
+           if(re) {
+               var error = new ValidationError(_this);
+               error.errors.code = new ValidatorError({
+                   type: 'unique',
+                   path: 'code',
+                   value: _this.code,
+                   message: '代码已存在'
+               });
+               next(error);
+           } else {
+               next();
+           }
+       }
+    });
 });
 
 citySchema.statics.query = function (queryParam, callback) {
