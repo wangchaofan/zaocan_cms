@@ -1,13 +1,13 @@
 var mongoose = require('mongoose');
 var db = require('../models/db');
-var City = require('../models/city');
+var City = require('../models/cityModel');
 var assert = require('assert');
 var async = require('async');
 
 var items = [
     { code: "001", name: "北京" },
     { code: "002", name: "成都" },
-    { code: "003", name: "重庆" },
+    { code: "003", name: "重庆" }
 ];
 
 async.each(items, function (item, callback) {

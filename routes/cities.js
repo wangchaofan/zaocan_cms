@@ -5,7 +5,6 @@ var express = require('express');
 var router = express.Router();
 var async = require('async');
 var cityModel = require('../models/cityModel');
-var app = express();
 var zcms = require('../models/ZCMS');
 
 /* GET users listing. */

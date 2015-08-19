@@ -12,7 +12,8 @@ var db = require('./models/db');
 
 
 var routes = require('./routes/index'),
-    city = require('./routes/cities');
+    city = require('./routes/cities'),
+    district = require('./routes/districts');
 
 var app = express();
 var router = express.Router();
@@ -52,6 +53,7 @@ router.use(logger('combined', {stream: accessLogStream}));
 
 app.use('/', routes);
 app.use('/city', city);
+app.use('/district', district);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
