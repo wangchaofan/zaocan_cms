@@ -227,3 +227,87 @@ table th {
     padding: 0 15px;
     line-height: 3;
 }
+.combobox {
+    width: 100%;
+}
+.combobox > .dropdown-toggle {
+    width: 100%;
+    padding-right: 25px;
+}
+.combobox.btn-group {
+    .dropdown-toggle .caret {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        margin-top: -2px;
+        vertical-align: middle;
+    }
+    .combobox-menu {
+        max-height: 545px;
+        overflow-y: auto;
+        min-height: 0px;
+        min-width: 100%;
+        z-index: 1035;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        &.inner {
+            position: static;
+            float: none;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            max-height: 653px;
+            overflow-y: auto;
+            min-height: 0px;
+            border-radius: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        li {
+            position: relative;
+            a {
+                display: block;
+                padding: 3px 20px;
+                clear: both;
+                font-weight: 400;
+                line-height: 1.42857143;
+                color: #333;
+                white-space: nowrap;
+                cursor: pointer;
+                &:focus,
+                &:hover {
+                    color: #262626;
+                    text-decoration: none;
+                    background-color: #f5f5f5;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+.open > .combobox-menu {
+    display: block;
+}
+.combobox-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}

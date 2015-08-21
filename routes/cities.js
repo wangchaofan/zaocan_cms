@@ -40,4 +40,13 @@ router.delete('/', function (req, res) {
        res.send(zcms.initError(err));
    });
 });
+router.get('/all', function (req, res) {
+   cityModel.find({}, function (err, data) {
+       if(err) {
+           res.send({error: error});
+       } else {
+           res.send(data);
+       }
+   }) ;
+});
 module.exports = router;
